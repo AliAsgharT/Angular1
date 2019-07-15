@@ -6,19 +6,27 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CounterComponent } from './counter/counter.component';
 import { ModalComponent } from './modal/modal.component';
-
+import { RouterModule} from '@angular/router';
+import { NewComponent } from './new/new.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CounterComponent,
-    ModalComponent
+    ModalComponent,
+    NewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    RouterModule.forRoot([
+      {
+        path: 'new-cmp',
+        component: NewCmpComponent
+      }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
