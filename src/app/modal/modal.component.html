@@ -1,18 +1,16 @@
-<div class="col-md-6 col-md-offset-3">
-  <h1>Home</h1>
-  <p>{{bodyText}}</p>
-  <button (click)="openModal('custom-modal-1')">Open Modal 1</button>
-</div>
-
-<modal id="custom-modal-1">
-  <div class="modal">
-    <div class="modal-body">
-      <h1>A Custom Modal!</h1>
-      <p>
-        Home page text: <input type="text" [(ngModel)]="bodyText" />
-      </p>
-      <button (click)="closeModal('custom-modal-1');">Close</button>
-    </div>
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Hi EveryOne!</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
   </div>
-  <div class="modal-background"></div>
-</modal>
+  <div class="modal-body">
+    <p>Finaly I Can..!</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Yes</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Please Click Me!</button>
