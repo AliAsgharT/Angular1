@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewComponent implements OnInit {
 
+  newcomponent = 'Entered in new component created';
   constructor() { }
 
   ngOnInit() {
