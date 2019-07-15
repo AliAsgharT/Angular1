@@ -1,18 +1,4 @@
-<div class="col-md-6 col-md-offset-3">
-  <h1>Home</h1>
-  <p>{{bodyText}}</p>
-  <button (click)="openModal('custom-modal-1')">Open Modal 1</button>
-</div>
+<p>You can pass an existing component as content of the modal window. In this case remember to add content component
+as an <code>entryComponents</code> section of your <code>NgModule</code>.</p>
 
-<modal id="custom-modal-1">
-  <div class="modal">
-    <div class="modal-body">
-      <h1>A Custom Modal!</h1>
-      <p>
-        Home page text: <input type="text" [(ngModel)]="bodyText" />
-      </p>
-      <button (click)="closeModal('custom-modal-1');">Close</button>
-    </div>
-  </div>
-  <div class="modal-background"></div>
-</modal>
+<button class="btn btn-lg btn-outline-primary" (click)="open()">Launch demo modal</button><p>modal works!</p>
