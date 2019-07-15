@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {count} from 'rxjs/operators';
 
 @Component({
   selector: 'app-counter',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CounterComponent implements OnInit {
 
- 
+
   Count:number=0;
 
   constructor() { }
@@ -18,6 +19,8 @@ export class CounterComponent implements OnInit {
     this.Count ++ ;
     }
     Decrise(){
-    this.Count --;
+    if (this.Count > 0) {
+      this.Count--;
+    }
     }
 }
