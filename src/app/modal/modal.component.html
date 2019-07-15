@@ -1,4 +1,17 @@
-<p>You can pass an existing component as content of the modal window. In this case remember to add content component
-as an <code>entryComponents</code> section of your <code>NgModule</code>.</p>
 
-<button class="btn btn-lg btn-outline-primary" (click)="open()">Launch demo modal</button><p>modal works!</p>
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Hi EveryOne!</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Finaly I Can..!</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Yes</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Please Click Me!</button>
